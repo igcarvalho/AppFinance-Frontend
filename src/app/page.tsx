@@ -11,6 +11,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
 
   const handleLogin = async (e: React.FormEvent) => {
+    console.log("API Base URL:", process.env.NEXT_PUBLIC_API_URL);
     e.preventDefault();
     setError("");
 
@@ -58,7 +59,7 @@ export default function LoginPage() {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
+          className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700 transition"
         >
           Login
         </button>

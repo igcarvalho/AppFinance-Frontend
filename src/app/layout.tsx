@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/styles/tailwind.css"; // importa direto o tailwind global
+import "@/styles/tailwind.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

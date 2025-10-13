@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useState } from "react";
 import api from "@/lib/api";
+import { useRouter } from "next/navigation";
+import router from "next/router";
 
 export default function DashboardPage() {
   const [summary, setSummary] = useState<any>(null);
@@ -14,6 +18,13 @@ export default function DashboardPage() {
     };
     fetchData();
   }, []);
+
+    useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/login");
+    }
+  }, [router]);
 
   if (!summary) return <div className="p-8 text-center">Loading...</div>;
 
